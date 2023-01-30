@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  service-nodeport-web
+  namespace: production
+spec:
+  selector:
+    app:  web
+  type:  NodePort
+  ports:
+  - name:  web-port
+    protocol: TCP
+    port:  8080
+    targetPort:  8080
+    nodePort: 30008
